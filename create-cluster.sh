@@ -2,6 +2,9 @@
 # PERFORM THIS ON CONTROL-PLANE OR MASTER NODES ONLY
 sudo kubeadm init --control-plane-endpoint=master
 
+# If you have only 1 CPU for master node, use this command
+sudo kubeadm init --control-plane-endpoint=master --ignore-preflight-errors=NumCPU
+
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
