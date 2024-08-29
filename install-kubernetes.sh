@@ -4,9 +4,10 @@ sudo apt-upgrade -y
 sudo apt-get remove needrestart -y
 
 # Add entries in hosts file
-sudo sed -i '2i10.0.0.4 master' /etc/hosts
-sudo sed -i '3i10.0.0.5 node1' /etc/hosts
-sudo sed -i '4i10.0.0.6 node2' /etc/hosts
+sudo sed -i '2i10.128.0.10 master' /etc/hosts
+sudo sed -i '3i10.128.0.11 node1' /etc/hosts
+sudo sed -i '4i10.128.0.12 node2' /etc/hosts
+
 
 # Turn off swap (Most cloud VMs don't have swap turned on by default, but still)
 sudo swapoff -a
